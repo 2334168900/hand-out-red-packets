@@ -1,0 +1,116 @@
+server:
+  port: 7777
+
+spring:
+  application:
+    name: redis7_study
+
+  swagger2:
+    enabled: true
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+  data:
+    redis:
+      database: 0
+      host: 192.168.171.198
+      port: 6379
+      password: 123456
+      lettuce:
+        pool:
+          max-active: 8
+          max-wait: -1ms
+          max-idle: 8
+          min-idle: 0
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/bigdata?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+    druid:
+      test-while-idle: false
+
+logging:
+  level:
+    root: info
+    com.atguigu.redis7: info
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger- %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger- %msg%n"
+  file:
+    name: D:/mylogs2023/redis7_study.log
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.org.entities
+
+
+
+
+
+
+
+
+
+#server:
+#  port: 7777
+#
+#spring:
+#  application:
+#    name: redis7_study
+#  mvc:
+#    pathmatch:
+#      matching-strategy: ant_path_matcher
+#  data:
+#    redis:
+#      password: 123456
+#      cluster:
+#        max-redirects: 3
+#        nodes: 192.168.171.198:6381,192.168.171.198:6382,192.168.171.197:6383,192.168.171.197:6384,192.168.171.196:6385,192.168.171.196:6386
+#      lettuce:
+#        cluster:
+#          refresh:
+#            adaptive: true
+#            period: 2000
+#        pool:
+#          max-active: 8
+#          max-idle: 8
+#          max-wait: -1ms
+#          min-idle: 0
+
+#单机
+#      host: 192.168.171.198
+#      database: 0
+#      port: 6379
+#      password: 123456
+#      jedis:
+#        pool:
+#          max-active: 8
+#          max-wait: -1ms
+#          max-idle: 8
+#          min-idle: 0
+
+
+#logging:
+#  level:
+#    root: info
+#    org:
+#      example:
+#        redis: info
+#  pattern:
+#    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+#    file: "name:%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger- %msg%n"
+#
+#  file:
+#    name: D:/idea/java
+#
+#springdoc:
+#  api-docs:
+#    enabled: true
+#  swagger-ui:
+#    enabled: true
+#    path: /swagger-ui.html
