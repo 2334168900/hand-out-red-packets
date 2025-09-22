@@ -11,6 +11,8 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+//抢红包
+//2025.4.17-2025.4.20
 @RestController
 public class redoscontroller {
     public static final String RED_PACKAGE_KEY = "redpackage:";
